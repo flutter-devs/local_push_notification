@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 void main() => runApp(new MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           appBarTheme: AppBarTheme(
         color: Colors.red,
@@ -38,6 +39,7 @@ class _MyAppState extends State<MyApp> {
         payload: payload,
       );
     }));
+    return null;
   }
 
   @override
@@ -50,31 +52,31 @@ class _MyAppState extends State<MyApp> {
       body: new Center(
         child: Column(
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               onPressed: showNotification,
               child: new Text(
                 'showNotification',
               ),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: cancelNotification,
               child: new Text(
                 'cancelNotification',
               ),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: scheduleNotification,
               child: new Text(
                 'scheduleNotification',
               ),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: showBigPictureNotification,
               child: new Text(
                 'showBigPictureNotification',
               ),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: showNotificationMediaStyle,
               child: new Text(
                 'showNotificationMediaStyle',
@@ -160,7 +162,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class NewScreen extends StatelessWidget {
-  String payload;
+  final String payload;
 
   NewScreen({
     @required this.payload,
